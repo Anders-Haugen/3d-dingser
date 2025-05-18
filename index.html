@@ -24,37 +24,81 @@
       <div class="flex justify-center mb-6 space-x-4">
         <button onclick="filterProducts('all', event)" class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-full">Alle</button>
         <button onclick="filterProducts('skyting', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Skyting</button>
-        <button onclick="filterProducts('hverdags', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Hverdagsprodukter</button>
+        <button onclick="filterProducts('hverdags', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Kvardagsprodukter</button>
       </div>
 
       <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <!-- Produkt 1 -->
         <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
-          <img id="magasin-bilde" src="magasin_bla.png" alt="Produkt 1" class="w-full h-48 object-cover rounded-xl" />
+          <img id="magasinbunn-bilde" src="magasinbunn_gul.JPG" alt="Magasinbunn" class="w-full h-48 object-cover rounded-xl" />
           <h2 class="text-xl font-semibold mt-4">Magasinbunn for 22LR</h2>
           <p class="text-gray-600">Bytt ut bunnen på Sauer 22LR-magasin med freshe farger og navn</p>
-          <p class="mt-2 text-gray-800 font-medium">Pris: 49 kr</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 30 kr</p>
           <div class="mt-2">
             <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
             <div class="flex space-x-2">
-              <button onclick="changeProductColor('magasin-bilde', 'bla')" class="w-6 h-6 rounded-full bg-blue-600 border border-gray-300" aria-label="Blå farge"></button>
-              <button onclick="changeProductColor('magasin-bilde', 'svart')" class="w-6 h-6 rounded-full bg-black border border-gray-300" aria-label="Svart farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'gul')" class="w-6 h-6 rounded-full bg-yellow-300 border border-gray-300" aria-label="Gul farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'rosa')" class="w-6 h-6 rounded-full bg-pink-600 border border-gray-300" aria-label="Rosa farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'raud')" class="w-6 h-6 rounded-full bg-red-600 border border-gray-300" aria-label="Raud farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'grøn')" class="w-6 h-6 rounded-full bg-green-600 border border-gray-300" aria-label="Grøn farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'oransje')" class="w-6 h-6 rounded-full bg-orange-600 border border-gray-300" aria-label="Oransje farge"></button>
             </div>
           </div>
         </div>
 
         <!-- Produkt 2 -->
-        <div class="bg-white rounded-2xl shadow p-4" data-category="hverdags">
-          <img id="nøkkelring-bilde" src="nøkkelring_purple.png" alt="Produkt 2" class="w-full h-48 object-cover rounded-xl" />
-          <h2 class="text-xl font-semibold mt-4">Nøkkelring med navn</h2>
-          <p class="text-gray-600">Praktisk nøkkelring med personlig navn i flere farger</p>
-          <p class="mt-2 text-gray-800 font-medium">Pris: 79 kr</p>
+        <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
+          <img id="sluttstykkerør_65-bilde" src="sluttstykkerør_65_gul.JPG" alt="Sluttstykkerør_6,5" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Sluttstykkerør for 6,5</h2>
+          <p class="text-gray-600">Spenner ned og beskytter sluttstykket</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 150 kr</p>
           <div class="mt-2">
             <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
             <div class="flex space-x-2">
-              <button onclick="changeProductColor('nøkkelring-bilde', 'purple')" class="w-6 h-6 rounded-full bg-purple-600 border border-gray-300" aria-label="Lilla farge"></button>
-              <button onclick="changeProductColor('nøkkelring-bilde', 'orange')" class="w-6 h-6 rounded-full bg-orange-500 border border-gray-300" aria-label="Oransje farge"></button>
-              <button onclick="changeProductColor('nøkkelring-bilde', 'gray')" class="w-6 h-6 rounded-full bg-gray-700 border border-gray-300" aria-label="Grå farge"></button>
+              <button onclick="changeProductColor('sluttstykkerør_65-bilde', 'gul')" class="w-6 h-6 rounded-full bg-yellow-300 border border-gray-300" aria-label="Gul farge"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produkt 3 -->
+        <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
+          <img id="kolbeforlenger-bilde" src="kolbeforlenger_rosa.JPG" alt="Kolbeforlenger" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Kolbeforlenger</h2>
+          <p class="text-gray-600">Forleng kolba med 8mm</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 100 kr</p>
+          <div class="mt-2">
+            <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
+            <div class="flex space-x-2">
+              <button onclick="changeProductColor('kolbeforlenger-bilde', 'rosa')" class="w-6 h-6 rounded-full bg-pink-300 border border-gray-300" aria-label="Rosa farge"></button>
+              <button onclick="changeProductColor('kolbeforlenger-bilde', 'svart')" class="w-6 h-6 rounded-full bg-black border border-gray-300" aria-label="Svart farge"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produkt 4 -->
+        <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
+          <img id="sluttstykkerør_22-bilde" src="sluttstykkerør_22_grøn.JPG" alt="Sluttstykkerør_22" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Sluttstykkerør for 22</h2>
+          <p class="text-gray-600">Spenn ned og beskytt sluttstykket</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 150 kr</p>
+          <div class="mt-2">
+            <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
+            <div class="flex space-x-2">
+              <button onclick="changeProductColor('sluttstykkerør_22-bilde', 'grøn')" class="w-6 h-6 rounded-full bg-green-600 border border-gray-300" aria-label="Grøn farge"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produkt 5 -->
+        <div class="bg-white rounded-2xl shadow p-4" data-category="hverdags">
+          <img id="diskstativ-bilde" src="diskstativ_raud.JPG" alt="Diskstativ" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Diskstativ</h2>
+          <p class="text-gray-600">Still ut kule disker</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 50 kr</p>
+          <div class="mt-2">
+            <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
+            <div class="flex space-x-2">
+              <button onclick="changeProductColor('diskstativ-bilde', 'red')" class="w-6 h-6 rounded-full bg-red-600 border border-gray-300" aria-label="Raud farge"></button>
             </div>
           </div>
         </div>
@@ -66,13 +110,13 @@
       <h2 class="text-2xl font-semibold mb-4">Tilgjengelige farger</h2>
       <div class="flex space-x-4 mb-8">
         <div class="flex items-center space-x-2">
-          <span class="w-6 h-6 rounded-full bg-red-600 border border-gray-300"></span><span>Rød</span>
+          <span class="w-6 h-6 rounded-full bg-red-600 border border-gray-300"></span><span>Raud</span>
         </div>
         <div class="flex items-center space-x-2">
-          <span class="w-6 h-6 rounded-full bg-blue-600 border border-gray-300"></span><span>Blå</span>
+          <span class="w-6 h-6 rounded-full bg-pink-600 border border-gray-300"></span><span>Rosa</span>
         </div>
         <div class="flex items-center space-x-2">
-          <span class="w-6 h-6 rounded-full bg-green-600 border border-gray-300"></span><span>Grønn</span>
+          <span class="w-6 h-6 rounded-full bg-green-600 border border-gray-300"></span><span>Grøn</span>
         </div>
         <div class="flex items-center space-x-2">
           <span class="w-6 h-6 rounded-full bg-black border border-gray-300"></span><span>Svart</span>
@@ -84,7 +128,7 @@
           <span class="w-6 h-6 rounded-full bg-orange-500 border border-gray-300"></span><span>Oransje</span>
         </div>
         <div class="flex items-center space-x-2">
-          <span class="w-6 h-6 rounded-full bg-gray-700 border border-gray-300"></span><span>Grå</span>
+          <span class="w-6 h-6 rounded-full bg-yellow-300 border border-gray-300"></span><span>Gul</span>
         </div>
       </div>
 
@@ -155,7 +199,7 @@
         // Bytt ut src til fil som f.eks 'produkt1-red.png'
         // Du må ha bildene tilgjengelig med disse navnene
         const baseName = productId.split('-')[0]; // f.eks produkt1
-        image.src = `${baseName}_${color}.png`;
+        image.src = `${baseName}_${color}.JPG`;
       }
     }
   </script>
