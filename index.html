@@ -3,55 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mine 3D-printede produkter</title>
+  <title>Lia-verkstedet</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
   <header class="bg-white shadow p-6">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold">Lia-verkstedet</h1>
-      <p class="text-gray-600">Mine 3D-printede prosjekter og produkter</p>
+      <nav>
+        <button id="tab-produkt" class="tab-btn px-4 py-2 bg-blue-600 text-white rounded-full mr-2">Produkter</button>
+        <button id="tab-info" class="tab-btn px-4 py-2 bg-gray-200 rounded-full">Farger & Kontakt</button>
+      </nav>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto p-6">
-    <div class="flex justify-center mb-6 space-x-4">
-      <button onclick="filterProducts('all', event)" class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-full">Alle</button>
-      <button onclick="filterProducts('skyting', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Skyting</button>
-      <button onclick="filterProducts('hverdags', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Hverdagsprodukter</button>
-    </div>
+  <main class="max-w-6xl mx-auto p-6 flex-grow">
+    <!-- Produkter-tab -->
+    <section id="tab-content-produkt">
+      <div class="flex justify-center mb-6 space-x-4">
+        <button onclick="filterProducts('all', event)" class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-full">Alle</button>
+        <button onclick="filterProducts('skyting', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Skyting</button>
+        <button onclick="filterProducts('hverdags', event)" class="filter-btn px-4 py-2 bg-gray-200 rounded-full">Hverdagsprodukter</button>
+      </div>
 
-    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Produkt 1 -->
-      <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
-        <img id="magasin-image" src="magasin_bla.png" alt="magasinbunn" class="w-full h-48 object-cover rounded-xl" />
-        <h2 class="text-xl font-semibold mt-4">Magasinbunn for 22LR</h2>
-        <p class="text-gray-600">Bytt ut bunnen på Sauer 22LR-magasin med freshe farger og navn</p>
-        <p class="mt-2 text-gray-800 font-medium">Pris: 49 kr</p>
-        <div class="mt-2">
-          <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
-          <div class="flex space-x-2">
-            <button onclick="changeColor('bla')" class="w-6 h-6 rounded-full bg-blue-600 border border-gray-300" aria-label="Blå farge"></button>
-            <button onclick="changeColor('svart')" class="w-6 h-6 rounded-full bg-black border border-gray-300" aria-label="Sort farge"></button>
+      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Produkt 1 -->
+        <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
+          <img id="magasin-bilde" src="magasin_bla.png" alt="Produkt 1" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Magasinbunn for 22LR</h2>
+          <p class="text-gray-600">Bytt ut bunnen på Sauer 22LR-magasin med freshe farger og navn</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 49 kr</p>
+          <div class="mt-2">
+            <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
+            <div class="flex space-x-2">
+              <button onclick="changeProductColor('magasin-bilde', 'bla')" class="w-6 h-6 rounded-full bg-blue-600 border border-gray-300" aria-label="Blå farge"></button>
+              <button onclick="changeProductColor('magasin-bilde', 'svart')" class="w-6 h-6 rounded-full bg-black border border-gray-300" aria-label="Svart farge"></button>
+            </div>
           </div>
+        </div>
+
+        <!-- Produkt 2 -->
+        <div class="bg-white rounded-2xl shadow p-4" data-category="hverdags">
+          <img id="nøkkelring-bilde" src="nøkkelring_purple.png" alt="Produkt 2" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Nøkkelring med navn</h2>
+          <p class="text-gray-600">Praktisk nøkkelring med personlig navn i flere farger</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 79 kr</p>
+          <div class="mt-2">
+            <p class="text-gray-600 mb-1">Tilgjengelige farger:</p>
+            <div class="flex space-x-2">
+              <button onclick="changeProductColor('nøkkelring-bilde', 'purple')" class="w-6 h-6 rounded-full bg-purple-600 border border-gray-300" aria-label="Lilla farge"></button>
+              <button onclick="changeProductColor('nøkkelring-bilde', 'orange')" class="w-6 h-6 rounded-full bg-orange-500 border border-gray-300" aria-label="Oransje farge"></button>
+              <button onclick="changeProductColor('nøkkelring-bilde', 'gray')" class="w-6 h-6 rounded-full bg-gray-700 border border-gray-300" aria-label="Grå farge"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Farger & Kontakt-tab -->
+    <section id="tab-content-info" class="hidden bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-semibold mb-4">Tilgjengelige farger</h2>
+      <div class="flex space-x-4 mb-8">
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-red-600 border border-gray-300"></span><span>Rød</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-blue-600 border border-gray-300"></span><span>Blå</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-green-600 border border-gray-300"></span><span>Grønn</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-black border border-gray-300"></span><span>Svart</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-purple-600 border border-gray-300"></span><span>Lilla</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-orange-500 border border-gray-300"></span><span>Oransje</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-gray-700 border border-gray-300"></span><span>Grå</span>
         </div>
       </div>
 
-      <!-- Produkt 2 -->
-      <div class="bg-white rounded-2xl shadow p-4 hidden" data-category="">
-        <img src="produkt2.jpg" alt="Produkt 2" class="w-full h-48 object-cover rounded-xl" />
-        <h2 class="text-xl font-semibold mt-4">Navn på produkt 2</h2>
-        <p class="text-gray-600">Kort beskrivelse av produktet. Materiale, bruksområde, osv.</p>
-      </div>
-
-      <!-- Produkt 3 -->
-      <div class="bg-white rounded-2xl shadow p-4 hidden" data-category="">
-        <img src="produkt3.jpg" alt="Produkt 3" class="w-full h-48 object-cover rounded-xl" />
-        <h2 class="text-xl font-semibold mt-4">Navn på produkt 3</h2>
-        <p class="text-gray-600">Kort beskrivelse av produktet. Materiale, bruksområde, osv.</p>
-      </div>
-
-      <!-- Legg til flere produkter her -->
+      <h2 class="text-2xl font-semibold mb-4">Kontaktinformasjon</h2>
+      <p>Har du spørsmål eller ønsker å bestille? Ta kontakt på:</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700">
+        <li>E-post: <a href="mailto:kontakt@lia-verkstedet.no" class="text-blue-600 underline">kontakt@lia-verkstedet.no</a></li>
+        <li>Telefon: <a href="tel:+4712345678" class="text-blue-600 underline">+47 12 34 56 78</a></li>
+      </ul>
     </section>
   </main>
 
@@ -60,22 +102,44 @@
   </footer>
 
   <script>
+    // Tab-switching
+    const btnProdukt = document.getElementById('tab-produkt');
+    const btnInfo = document.getElementById('tab-info');
+    const contentProdukt = document.getElementById('tab-content-produkt');
+    const contentInfo = document.getElementById('tab-content-info');
+
+    btnProdukt.addEventListener('click', () => {
+      btnProdukt.classList.add('bg-blue-600', 'text-white');
+      btnProdukt.classList.remove('bg-gray-200');
+      btnInfo.classList.remove('bg-blue-600', 'text-white');
+      btnInfo.classList.add('bg-gray-200');
+
+      contentProdukt.classList.remove('hidden');
+      contentInfo.classList.add('hidden');
+    });
+
+    btnInfo.addEventListener('click', () => {
+      btnInfo.classList.add('bg-blue-600', 'text-white');
+      btnInfo.classList.remove('bg-gray-200');
+      btnProdukt.classList.remove('bg-blue-600', 'text-white');
+      btnProdukt.classList.add('bg-gray-200');
+
+      contentInfo.classList.remove('hidden');
+      contentProdukt.classList.add('hidden');
+    });
+
+    // Produktfilter
     function filterProducts(category, event) {
       const products = document.querySelectorAll('[data-category]');
-      products.forEach(product => {
-        const productCategory = product.getAttribute('data-category');
-        if (category === 'all') {
-          product.classList.remove('hidden');
+      products.forEach(p => {
+        if (category === 'all' || p.dataset.category === category) {
+          p.classList.remove('hidden');
         } else {
-          if (productCategory === category) {
-            product.classList.remove('hidden');
-          } else {
-            product.classList.add('hidden');
-          }
+          p.classList.add('hidden');
         }
       });
 
-      // Marker valgt knapp
+      // Endre knappfarger
       document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('bg-blue-600', 'text-white');
         btn.classList.add('bg-gray-200');
@@ -84,9 +148,15 @@
       event.target.classList.remove('bg-gray-200');
     }
 
-    function changeColor(color) {
-      const image = document.getElementById('magasin-image');
-      image.src = `magasin_${color}.png`;
+    // Fargebytte funksjon for produktbilder
+    function changeProductColor(productId, color) {
+      const image = document.getElementById(productId);
+      if (image) {
+        // Bytt ut src til fil som f.eks 'produkt1-red.png'
+        // Du må ha bildene tilgjengelig med disse navnene
+        const baseName = productId.split('-')[0]; // f.eks produkt1
+        image.src = `${baseName}_${color}.png`;
+      }
     }
   </script>
 </body>
