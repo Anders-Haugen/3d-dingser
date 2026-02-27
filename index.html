@@ -30,18 +30,18 @@
       <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <!-- Produkt 1 -->
         <div class="bg-white rounded-2xl shadow p-4" data-category="skyting">
-          <img id="magasinbunn-bilde" src="magasinbunn_gul.JPG" alt="Magasinbunn" class="w-full h-48 object-cover rounded-xl" />
-          <h2 class="text-xl font-semibold mt-4">Magasinbunn for 22LR</h2>
-          <p class="text-gray-600">Bytt ut bunnen på Sauer 22LR-magasin med freshe farger og navn</p>
-          <p class="mt-2 text-gray-800 font-medium">Pris: 30 kr</p>
+          <img id="magasinbunn-bilde" src="bilder/magasinbunn_engbo_22/gul.JPG" alt="Magasinbunn" class="w-full h-48 object-cover rounded-xl" />
+          <h2 class="text-xl font-semibold mt-4">Magasinbunn for Engbo 22LR</h2>
+          <p class="text-gray-600">Bytt ut bunnen på Engbo 22LR-magasin med freshe farger og navn</p>
+          <p class="mt-2 text-gray-800 font-medium">Pris: 20 kr</p>
           <div class="mt-2">
             <p class="text-gray-600 mb-1">Klikk for å sjå i anna farge:</p>
             <div class="flex space-x-2">
-              <button onclick="changeProductColor('magasinbunn-bilde', 'gul')" class="w-6 h-6 rounded-full bg-yellow-300 border border-gray-300" aria-label="Gul farge"></button>
-              <button onclick="changeProductColor('magasinbunn-bilde', 'rosa')" class="w-6 h-6 rounded-full bg-pink-600 border border-gray-300" aria-label="Rosa farge"></button>
-              <button onclick="changeProductColor('magasinbunn-bilde', 'raud')" class="w-6 h-6 rounded-full bg-red-600 border border-gray-300" aria-label="Raud farge"></button>
-              <button onclick="changeProductColor('magasinbunn-bilde', 'grøn')" class="w-6 h-6 rounded-full bg-green-600 border border-gray-300" aria-label="Grøn farge"></button>
-              <button onclick="changeProductColor('magasinbunn-bilde', 'oransje')" class="w-6 h-6 rounded-full bg-orange-600 border border-gray-300" aria-label="Oransje farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'bilder/magasinbunn_engbo_22/gul.JPG')" class="w-6 h-6 rounded-full bg-yellow-300 border border-gray-300" aria-label="Gul farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'bilder/magasinbunn_engbo_22/rosa.JPG')" class="w-6 h-6 rounded-full bg-pink-600 border border-gray-300" aria-label="Rosa farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'bilder/magasinbunn_engbo_22/raud.JPG')" class="w-6 h-6 rounded-full bg-red-600 border border-gray-300" aria-label="Raud farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'bilder/magasinbunn_engbo_22/grøn.JPG')" class="w-6 h-6 rounded-full bg-green-600 border border-gray-300" aria-label="Grøn farge"></button>
+              <button onclick="changeProductColor('magasinbunn-bilde', 'bilder/magasinbunn_engbo_22/oransje.JPG')" class="w-6 h-6 rounded-full bg-orange-600 border border-gray-300" aria-label="Oransje farge"></button>
             </div>
           </div>
         </div>
@@ -241,9 +241,11 @@
     function changeProductColor(productId, color) {
       const image = document.getElementById(productId);
       if (image) {
-        // Bytt ut src til fil som f.eks 'produkt1-red.png'
-        // Du må ha bildene tilgjengelig med disse navnene
-        const baseName = productId.split('-')[0]; // f.eks produkt1
+        if (color.includes('/')) {
+          image.src = color;
+          return;
+        }
+        const baseName = productId.split('-')[0];
         image.src = `${baseName}_${color}.JPG`;
       }
     }
